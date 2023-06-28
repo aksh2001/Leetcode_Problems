@@ -1,0 +1,16 @@
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        
+          List<String> parenthesis = new ArrayList<>();
+               if(n==0){
+                   return new ArrayList(Arrays.asList(""));
+               }
+
+               for(int leftcount = 0; leftcount < n; leftcount++)
+                  for(String leftString : generateParenthesis(leftcount))
+                    for(String rightString : generateParenthesis(n-1-leftcount))
+                        parenthesis.add("("+leftString+")"+rightString);
+
+                        return parenthesis; 
+    }
+}

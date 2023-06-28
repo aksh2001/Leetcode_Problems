@@ -1,0 +1,31 @@
+import java.lang.Math;
+class Solution {
+public boolean isPalindrome(int x) {
+
+        if(x<0) return false;
+
+        double num = x;
+        double palindrome = 0;
+
+        int rem,length = 0;
+
+        while(num != 0){
+            rem =(int) num % 10;
+            length++;
+            num =  (int)num/10;
+
+        }
+        num = x;
+
+        while(num != 0){
+            rem = (int)num % 10;
+            palindrome += rem * Math.pow(10,length-1); 
+            num = (int)num / 10;
+            length--;
+        }
+        if(palindrome == x) return true;
+
+        return false;
+        
+    }
+}

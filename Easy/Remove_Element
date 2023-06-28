@@ -1,0 +1,26 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int count = 0;
+
+        String[] Snums = Arrays.stream(nums)
+                               .mapToObj(String::valueOf)
+                               .toArray(String[]::new);
+        for (int i = 0; i < nums.length; i++) {
+            if (Integer.parseInt(Snums[i]) == val) {
+                Snums[i] = "A";
+                count++;
+            }
+        }
+        Arrays.sort(Snums);
+        for (int i = 0; i < nums.length - count; i++) {
+            nums[i] = Integer.parseInt(Snums[i]);
+
+        }
+
+        
+
+
+        return nums.length - count;
+        
+    }
+}

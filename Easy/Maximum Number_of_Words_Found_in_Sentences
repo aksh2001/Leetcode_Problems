@@ -1,0 +1,20 @@
+class Solution {
+
+    public int mostWordsFound(String[] sentences) {
+        
+
+         int i =0;
+
+         int mostWords = 0;
+
+         while(i < sentences.length){
+
+            String[] Words  = sentences[i].split(" ", -2);
+
+            if(Words.length>mostWords) mostWords = Words.length;
+            i++;
+        }
+
+        return mostWords;
+    }
+}
